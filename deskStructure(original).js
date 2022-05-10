@@ -18,7 +18,7 @@ export const getDefaultDocumentNode = (props) => {
   if (props.schemaType === 'home') {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
-
+  
   return S.document();
 };
 
@@ -27,35 +27,28 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
-        .title('Home')
-        .icon(DocumentIcon)      
+        .title('Field level')
+        .icon(FieldIcon)
         .child(
-            S.document()
-            .id('home')
-            .schemaType('home')
-            .views(I18nS.getDocumentNodeViewsForSchemaType('home'))
+          S.list()
+            .id('field-level')
+            .title('Field level translations')
+            .items(
+              [
+                S.documentTypeListItem('article')
+                  .icon(ArticleIcon),
+                S.documentTypeListItem('author')
+                  .icon(AuthorIcon),
+              ]
+            )
         ),
-    //   S.listItem()
-    //     .title('Pages')
-    //     .icon(DocumentIcon)
-    //     .child(
-    //         S.documentList()
-    //         .id('home')
-    //         .title('Home')
-    //         // Use a GROQ filter to get documents.
-    //         .filter('_type == "home" && (!defined(_lang) || _lang == $baseLang)')
-    //         .params({ baseLang: i18n.base })
-    //         .canHandleIntent((_name, params, _context) => {
-    //           // Assume we can handle all intents (actions) regarding post documents
-    //           return params.type === 'home'
-    //         })
-    //     ),     
+        
       S.listItem()
         .title('Events')
         .icon(DocumentIcon)
         .child(
           S.list()
-            .id('events')
+            .id('doc-level')
             .title('Events')
             .items([
               S.listItem()

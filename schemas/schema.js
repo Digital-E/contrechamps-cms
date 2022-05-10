@@ -7,6 +7,7 @@ import captionImage from './objects/captionImage'
 import article from './documents/article'
 import author from './documents/author'
 import post from './documents/post'
+import home from './documents/home'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -19,7 +20,8 @@ export default createSchema({
       richText,
       openGraph,
       captionImage,
-      post
+      post,
+      home
     ])
     // Include documents with field translation support.
     // This changes their structure, transforming
