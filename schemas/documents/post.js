@@ -23,6 +23,31 @@ export default {
       },
     },
     {
+        title: 'Start Date',
+        name: 'startdate',
+        type: 'date'
+    },
+    {
+        title: 'End Date',
+        name: 'enddate',
+        type: 'date'
+    },
+    {
+        title: 'Start Time',
+        name: 'starttime',
+        type: 'datetime'
+    },
+    {
+        title: 'End Time',
+        name: 'endtime',
+        type: 'datetime'
+    },
+    {
+        title: 'Location',
+        name: 'location',
+        type: 'richText'
+    },
+    {
       title: 'Image',
       name: 'image',
       type: 'captionImage',
