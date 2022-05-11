@@ -1,9 +1,13 @@
 import { i18n } from '../documentTranslation'
 
+
 export default {
   title: 'Home',
   name: 'home',
   type: 'document',
+  initialValue: () => ({
+    _lang: 'fr',
+  }),
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   // The next property enables full-document translation for this document
   // via the sanity-intl plugin. You can of course modify this object should you
@@ -27,6 +31,21 @@ export default {
       options: {
         source: (doc) => `${doc._lang}`,
       },
+    },
+    {
+      title: 'Video',
+      name: 'video',
+      type: 'string'
+    },
+    {
+      title: 'Text Field One',
+      name: 'textfieldone',
+      type: 'richText'
+    },
+    {
+      title: 'Text Field Two',
+      name: 'textfieldtwo',
+      type: 'richText'
     },
   ]
 }

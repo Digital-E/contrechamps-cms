@@ -4,6 +4,9 @@ export default {
   title: 'Post',
   name: 'post',
   type: 'document',
+  initialValue: () => ({
+    _lang: 'fr',
+  }),
   // The next property enables full-document translation for this document
   // via the sanity-intl plugin. You can of course modify this object should you
   // need to on a document-to-document bassis.
@@ -12,6 +15,11 @@ export default {
     {
       title: 'Title',
       name: 'title',
+      type: 'string',
+    },
+    {
+      title: 'Content',
+      name: 'content',
       type: 'string',
     },
     {

@@ -34,22 +34,7 @@ export default () =>
             .id('home')
             .schemaType('home')
             .views(I18nS.getDocumentNodeViewsForSchemaType('home'))
-        ),
-    //   S.listItem()
-    //     .title('Pages')
-    //     .icon(DocumentIcon)
-    //     .child(
-    //         S.documentList()
-    //         .id('home')
-    //         .title('Home')
-    //         // Use a GROQ filter to get documents.
-    //         .filter('_type == "home" && (!defined(_lang) || _lang == $baseLang)')
-    //         .params({ baseLang: i18n.base })
-    //         .canHandleIntent((_name, params, _context) => {
-    //           // Assume we can handle all intents (actions) regarding post documents
-    //           return params.type === 'home'
-    //         })
-    //     ),     
+        ),  
       S.listItem()
         .title('Events')
         .icon(DocumentIcon)

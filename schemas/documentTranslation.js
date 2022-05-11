@@ -5,6 +5,8 @@ import { languages, baseLanguage } from './languages'
 export const i18n = {
   base: baseLanguage.name,
   languages,
+  idStructure: "subpath",
+  referenceBehavior: "hard",
   fieldNames: {
     lang: '_lang',
     references: '_langRefs'
