@@ -1,7 +1,7 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Post',
+  title: 'Event',
   name: 'post',
   type: 'document',
   initialValue: () => ({
@@ -64,9 +64,76 @@ export default {
       },
     },
     {
-      title: 'Body',
-      name: 'body',
-      type: 'richText'
+        title: 'Ticket Link',
+        name: 'ticketLink',
+        type: 'url'
+    },
+    {
+        title: 'Ticket Link Label',
+        name: 'ticketLinkLabel',
+        type: 'string'
+    },          
+    {
+        title: 'Information',
+        name: 'information',
+        type: 'richText'
+    },
+    {
+      title: 'Slices',
+      name: 'slices',
+      type: 'array',
+      of: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'image'
+        },
+        {
+          name: 'video',
+          type: 'object',
+          initialValue: {
+            label: "Video"
+          },
+          fields: [
+              {
+                  name: 'label',
+                  type: 'string',
+                  readOnly: true
+              },             
+              {
+                  name: 'video',
+                  description: "Vimeo Video ID: https://vimeo.com/[ID]",
+                  type: 'string' 
+              }
+          ]
+        },
+        {
+          title: 'Text',
+          name: 'Text',
+          type: 'object',
+          initialValue: {
+            label: "Text"
+          },
+          fields: [
+              {
+                  name: 'label',
+                  type: 'string',
+                  readOnly: true
+              },           
+              {
+                title: 'Text',
+                name: 'text',
+                type: 'richText'
+              },
+              {
+                title: 'Double Column',
+                name: 'doubleColumn',
+                type: 'boolean',
+                initialValue: false
+              }
+          ]
+        }
+      ]
     }
   ],
   preview: {

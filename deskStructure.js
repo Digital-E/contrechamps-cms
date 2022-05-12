@@ -11,11 +11,15 @@ import {
 } from 'react-icons/gr'
 
 export const getDefaultDocumentNode = (props) => {
-  if (props.schemaType === 'post') {
-    return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
-  }
-
-  if (props.schemaType === 'home') {
+  if (
+      props.schemaType === 'post'
+      ||
+      props.schemaType === 'home'
+      ||
+      props.schemaType === 'menu'
+      ||
+      props.schemaType === 'footer'
+      ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
 
@@ -31,10 +35,31 @@ export default () =>
         .icon(DocumentIcon)      
         .child(
             S.document()
+            .title('Home')
             .id('home')
             .schemaType('home')
             .views(I18nS.getDocumentNodeViewsForSchemaType('home'))
-        ),  
+        ),
+      S.listItem()
+        .title('Menu')
+        .icon(DocumentIcon)      
+        .child(
+            S.document()
+            .title('Menu')
+            .id('menu')
+            .schemaType('menu')
+            .views(I18nS.getDocumentNodeViewsForSchemaType('menu'))
+        ),
+      S.listItem()
+        .title('Footer')
+        .icon(DocumentIcon)      
+        .child(
+            S.document()
+            .title('Footer')
+            .id('footer')
+            .schemaType('footer')
+            .views(I18nS.getDocumentNodeViewsForSchemaType('footer'))
+        ),                     
       S.listItem()
         .title('Events')
         .icon(DocumentIcon)

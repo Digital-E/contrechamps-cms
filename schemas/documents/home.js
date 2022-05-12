@@ -33,8 +33,14 @@ export default {
       },
     },
     {
+      title: 'News Title',
+      name: 'newsTitle',
+      type: 'string',
+    },
+    {
       title: 'Video',
       name: 'video',
+      description: "Vimeo Video ID: https://vimeo.com/[ID]",
       type: 'string'
     },
     {

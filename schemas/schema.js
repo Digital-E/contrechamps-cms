@@ -8,6 +8,8 @@ import article from './documents/article'
 import author from './documents/author'
 import post from './documents/post'
 import home from './documents/home'
+import menu from './documents/menu'
+import footer from './documents/footer'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -21,7 +23,9 @@ export default createSchema({
       openGraph,
       captionImage,
       post,
-      home
+      home,
+      menu,
+      footer
     ])
     // Include documents with field translation support.
     // This changes their structure, transforming
