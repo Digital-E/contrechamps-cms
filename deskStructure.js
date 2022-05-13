@@ -99,7 +99,7 @@ export default () =>
                 .title('Presse')
                 .id('presse')
                 .icon(PostIcon)
-                .schemaType('media')
+                .schemaType('presse')
                 .child(
                   S.documentList()
                     .id('presse')
@@ -127,7 +127,7 @@ export default () =>
                 .title('Vidéos')
                 .id('videos')
                 .icon(PostIcon)
-                .schemaType('media')
+                .schemaType('video')
                 .child(
                   S.documentList()
                     .id('videos')
@@ -155,7 +155,7 @@ export default () =>
                 .title('Disques')
                 .id('disques')
                 .icon(PostIcon)
-                .schemaType('media')
+                .schemaType('disque')
                 .child(
                   S.documentList()
                     .id('disque')

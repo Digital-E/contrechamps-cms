@@ -10,7 +10,9 @@ import home from './documents/home'
 import post from './documents/post'
 import saison from './documents/saison'
 import mediaPage from './documents/mediaPage'
-import media from './documents/media'
+import presse from './documents/presse'
+import video from './documents/video'
+import disque from './documents/disque'
 import menu from './documents/menu'
 import footer from './documents/footer'
 import { translateFields } from './fieldTranslation'
@@ -29,7 +31,9 @@ export default createSchema({
       post,
       saison,
       mediaPage,
-      media,
+      presse,
+      video,
+      disque,
       menu,
       footer
     ])

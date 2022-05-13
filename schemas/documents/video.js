@@ -1,8 +1,8 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Media Page',
-  name: 'mediaPage',
+  title: 'Video',
+  name: 'video',
   type: 'document',
   initialValue: () => ({
     _lang: 'fr',
@@ -26,27 +26,25 @@ export default {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      // options: {
-      //   // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-      //   source: (doc) => `${doc._lang}__${doc.title}`,
-      // },
-    },
-    {
-      title: 'Type',
-      name: 'type',
-      type: 'string',
       options: {
-        list: [
-          { title: "Presse", value: "presse"},
-          { title: "Vidéos", value: "video"},
-          { title: "Disques", value: "disque"},
-        ]
-      }
+        // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
+        source: (doc) => `${doc._lang}__media__presse__${doc.title}`,
+      },
     },
     {
-      title: 'Text',
-      name: 'text',
-      type: 'richText'
-  },
+        title: 'Date',
+        name: 'date',
+        type: 'date'
+    },
+    {
+        title: 'Press Link',
+        name: 'pressLink',
+        type: 'url'
+    },
+    {
+        title: 'Press Link Label',
+        name: 'pressLinkLabel',
+        type: 'string'
+    }
   ]
 }
