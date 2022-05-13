@@ -1,8 +1,8 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Event',
-  name: 'post',
+  title: 'Media',
+  name: 'media',
   type: 'document',
   initialValue: () => ({
     _lang: 'fr',

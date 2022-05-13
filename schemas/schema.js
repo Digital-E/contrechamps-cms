@@ -6,8 +6,11 @@ import openGraph from './objects/openGraph'
 import captionImage from './objects/captionImage'
 import article from './documents/article'
 import author from './documents/author'
-import post from './documents/post'
 import home from './documents/home'
+import post from './documents/post'
+import saison from './documents/saison'
+import mediaPage from './documents/mediaPage'
+import media from './documents/media'
 import menu from './documents/menu'
 import footer from './documents/footer'
 import { translateFields } from './fieldTranslation'
@@ -22,8 +25,11 @@ export default createSchema({
       richText,
       openGraph,
       captionImage,
-      post,
       home,
+      post,
+      saison,
+      mediaPage,
+      media,
       menu,
       footer
     ])

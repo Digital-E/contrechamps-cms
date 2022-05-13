@@ -16,9 +16,7 @@ export const getDefaultDocumentNode = (props) => {
       ||
       props.schemaType === 'home'
       ||
-      props.schemaType === 'menu'
-      ||
-      props.schemaType === 'footer'
+      props.schemaType === 'media'
       ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
@@ -41,6 +39,139 @@ export default () =>
             .views(I18nS.getDocumentNodeViewsForSchemaType('home'))
         ),
       S.listItem()
+        .title('Saison')
+        .icon(DocumentIcon)      
+        .child(
+            S.document()
+            .title('Saison')
+            .id('saison')
+            .schemaType('saison')
+            .views(I18nS.getDocumentNodeViewsForSchemaType('saison'))
+        ), 
+      S.listItem()
+        .title('Événements')
+        .icon(DocumentIcon)
+        .child(
+          S.list()
+            .id('events')
+            .title('Events')
+            .items([
+              S.listItem()
+                .title('Événements')
+                .id('post-docs')
+                .icon(PostIcon)
+                .schemaType('post')
+                .child(
+                  S.documentList()
+                    .id('post')
+                    .title('Événements')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "post" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'post'
+                    })
+                )
+            ]
+            )
+        ),
+      S.listItem()
+        .title('Media')
+        .icon(DocumentIcon)
+        .child(        
+          S.list()
+            .id('media')
+            .title('Media')
+            .items([
+              S.listItem()
+                .title('Page Presse')
+                .icon(DocumentIcon)
+                .schemaType('mediaPage')
+                .child(
+                  S.document()
+                  .title('Page Presse')
+                  .id('pressePage')
+                  .schemaType('mediaPage')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('mediaPage'))
+                ),
+              S.listItem()
+                .title('Presse')
+                .id('presse')
+                .icon(PostIcon)
+                .schemaType('media')
+                .child(
+                  S.documentList()
+                    .id('presse')
+                    .title('Presse')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "presse" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'presse'
+                    })
+                ),
+                S.listItem()
+                .title('Page Videos')
+                .icon(DocumentIcon)
+                .schemaType('mediaPage')
+                .child(
+                  S.document()
+                  .title('Page Videos')
+                  .id('videosPage')
+                  .schemaType('mediaPage')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('mediaPage'))
+                ),                
+              S.listItem()
+                .title('Vidéos')
+                .id('videos')
+                .icon(PostIcon)
+                .schemaType('media')
+                .child(
+                  S.documentList()
+                    .id('videos')
+                    .title('Vidéos')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "video" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'video'
+                    })
+                ),
+                S.listItem()
+                .title('Page Disques')
+                .icon(DocumentIcon)
+                .schemaType('mediaPage')
+                .child(
+                  S.document()
+                  .title('Page Disques')
+                  .id('disquesPage')
+                  .schemaType('mediaPage')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('mediaPage'))
+                ),                   
+              S.listItem()
+                .title('Disques')
+                .id('disques')
+                .icon(PostIcon)
+                .schemaType('media')
+                .child(
+                  S.documentList()
+                    .id('disque')
+                    .title('Disques')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "disque" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'disque'
+                    })
+                )                                  
+            ]
+            )
+        ),                         
+      S.listItem()
         .title('Menu')
         .icon(DocumentIcon)      
         .child(
@@ -60,32 +191,4 @@ export default () =>
             .schemaType('footer')
             .views(I18nS.getDocumentNodeViewsForSchemaType('footer'))
         ),                     
-      S.listItem()
-        .title('Events')
-        .icon(DocumentIcon)
-        .child(
-          S.list()
-            .id('events')
-            .title('Events')
-            .items([
-              S.listItem()
-                .title('Event')
-                .id('post-docs')
-                .icon(PostIcon)
-                .schemaType('post')
-                .child(
-                  S.documentList()
-                    .id('post')
-                    .title('Posts')
-                    // Use a GROQ filter to get documents.
-                    .filter('_type == "post" && (!defined(_lang) || _lang == $baseLang)')
-                    .params({ baseLang: i18n.base })
-                    .canHandleIntent((_name, params, _context) => {
-                      // Assume we can handle all intents (actions) regarding post documents
-                      return params.type === 'post'
-                    })
-                )
-            ]
-            )
-        ),
     ])
