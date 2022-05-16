@@ -1,8 +1,8 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Event',
-  name: 'post',
+  title: "L'ensemble",
+  name: 'lEnsemble',
   type: 'document',
   initialValue: () => ({
     _lang: 'fr',
@@ -28,73 +28,8 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__saison__${doc.title}`,
+        source: (doc) => `${doc._lang}__l-ensemble__${doc.title}`,
       },
-    },
-    {
-        title: 'Start Date',
-        name: 'startdate',
-        type: 'date'
-    },
-    {
-        title: 'End Date',
-        name: 'enddate',
-        type: 'date'
-    },
-    {
-        title: 'Start Time',
-        name: 'starttime',
-        type: 'datetime'
-    },
-    {
-        title: 'End Time',
-        name: 'endtime',
-        type: 'datetime'
-    },
-    {
-        title: 'Location',
-        name: 'location',
-        type: 'richText'
-    },
-    {
-      title: 'Tags',
-      name: 'tags',
-      type: 'array',
-      of: [
-        {
-          name: 'Tag',
-          type: 'object',
-          fields: [
-              {
-                  name: 'label',
-                  type: 'string' 
-              },
-          ]
-        },
-      ]
-    },
-    {
-      title: 'Image',
-      name: 'image',
-      type: 'captionImage',
-      options: {
-        hotspot: true
-      },
-    },
-    {
-        title: 'Ticket Link',
-        name: 'ticketLink',
-        type: 'url'
-    },
-    {
-        title: 'Ticket Link Label',
-        name: 'ticketLinkLabel',
-        type: 'string'
-    },          
-    {
-        title: 'Information',
-        name: 'information',
-        type: 'richText'
     },
     {
       title: 'Slices',
@@ -154,10 +89,4 @@ export default {
       ]
     }
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'image'
-    }
-  }
 }

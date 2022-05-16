@@ -11,12 +11,19 @@ import {
 } from 'react-icons/gr'
 
 export const getDefaultDocumentNode = (props) => {
+  return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   if (
       props.schemaType === 'post'
       ||
       props.schemaType === 'home'
       ||
       props.schemaType === 'media'
+      ||
+      props.schemaType === 'lEnsemble'
+      ||
+      props.schemaType === 'menu'
+      ||
+      props.schemaType === 'footer'
       ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
@@ -76,6 +83,44 @@ export default () =>
             ]
             )
         ),
+      S.listItem()
+        .title("L'ensemble")
+        .icon(DocumentIcon)
+        .child(
+          S.list()
+            .id('lEnsemble')
+            .title("L'ensemble")
+            .items([
+              S.listItem()
+              .title('Menu')
+              .icon(DocumentIcon)      
+              .child(
+                  S.document()
+                  .title('Menu')
+                  .id('lEnsembleMenu')
+                  .schemaType('lEnsembleMenu')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('lEnsembleMenu'))
+              ),
+              S.listItem()
+                .title("L'ensemble")
+                .id('lEnsemble')
+                .icon(PostIcon)
+                .schemaType('lEnsemble')
+                .child(
+                  S.documentList()
+                    .id('lEnsemble')
+                    .title("L'ensemble")
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "lEnsemble" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'lEnsemble'
+                    })
+                )
+            ]
+            )
+        ),        
       S.listItem()
         .title('Media')
         .icon(DocumentIcon)

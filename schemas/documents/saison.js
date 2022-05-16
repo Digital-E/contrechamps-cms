@@ -36,6 +36,23 @@ export default {
       title: 'Text',
       name: 'text',
       type: 'richText'
+    },
+    {
+      title: 'Tags',
+      name: 'tags',
+      type: 'array',
+      of: [
+        {
+          name: 'tag',
+          type: 'object',
+          fields: [
+              {
+                  name: 'tag',
+                  type: 'string' 
+              }
+          ]
+        },
+      ]
     }
   ]
 }

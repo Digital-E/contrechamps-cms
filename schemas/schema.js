@@ -13,6 +13,8 @@ import mediaPage from './documents/mediaPage'
 import presse from './documents/presse'
 import video from './documents/video'
 import disque from './documents/disque'
+import lEnsemble from './documents/lEnsemble'
+import lEnsembleMenu from './documents/lEnsembleMenu'
 import menu from './documents/menu'
 import footer from './documents/footer'
 import { translateFields } from './fieldTranslation'
@@ -34,6 +36,8 @@ export default createSchema({
       presse,
       video,
       disque,
+      lEnsemble,
+      lEnsembleMenu,
       menu,
       footer
     ])

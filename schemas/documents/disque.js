@@ -28,22 +28,22 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__media__presse__${doc.title}`,
+        source: (doc) => `${doc._lang}__media__disques__${doc.title}`,
       },
     },
     {
-        title: 'Date',
-        name: 'date',
-        type: 'date'
-    },
+      title: 'Text',
+      name: 'text',
+      type: 'richText',
+    },    
     {
-        title: 'Press Link',
-        name: 'pressLink',
+        title: 'Link',
+        name: 'link',
         type: 'url'
     },
     {
-        title: 'Press Link Label',
-        name: 'pressLinkLabel',
+        title: 'Link Label',
+        name: 'linkLabel',
         type: 'string'
     }
   ]

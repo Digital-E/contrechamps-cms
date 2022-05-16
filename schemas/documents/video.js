@@ -28,23 +28,24 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__media__presse__${doc.title}`,
+        source: (doc) => `${doc._lang}__media__videos__${doc.title}`,
       },
     },
     {
-        title: 'Date',
-        name: 'date',
-        type: 'date'
+        title: 'Image',
+        name: 'image',
+        type: 'image'
+        },
+    {
+    title: 'Video',
+    name: 'video',
+    description: "Vimeo Video ID: https://vimeo.com/[ID]",
+    type: 'string'
     },
     {
-        title: 'Press Link',
-        name: 'pressLink',
-        type: 'url'
+        title: 'Text',
+        name: 'text',
+        type: 'richText'
     },
-    {
-        title: 'Press Link Label',
-        name: 'pressLinkLabel',
-        type: 'string'
-    }
   ]
 }

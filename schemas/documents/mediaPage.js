@@ -26,10 +26,6 @@ export default {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      // options: {
-      //   // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-      //   source: (doc) => `${doc._lang}__${doc.title}`,
-      // },
     },
     {
       title: 'Type',
