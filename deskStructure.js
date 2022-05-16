@@ -11,7 +11,6 @@ import {
 } from 'react-icons/gr'
 
 export const getDefaultDocumentNode = (props) => {
-  return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   if (
       props.schemaType === 'post'
       ||
@@ -20,6 +19,12 @@ export const getDefaultDocumentNode = (props) => {
       props.schemaType === 'media'
       ||
       props.schemaType === 'lEnsemble'
+      ||
+      props.schemaType === 'lEnsembleMenu'
+      ||
+      props.schemaType === 'lesMusiciens'
+      ||
+      props.schemaType === 'lesMusiciensMenu'
       ||
       props.schemaType === 'menu'
       ||
@@ -117,7 +122,34 @@ export default () =>
                       // Assume we can handle all intents (actions) regarding post documents
                       return params.type === 'lEnsemble'
                     })
-                )
+                ),
+              S.listItem()
+              .title('Les Musiciens Menu')
+              .icon(DocumentIcon)      
+              .child(
+                  S.document()
+                  .title('Les Musiciens Menu')
+                  .id('lesMusiciensMenu')
+                  .schemaType('lesMusiciensMenu')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('lesMusiciensMenu'))
+              ),
+              S.listItem()
+                .title("Les Musiciens")
+                .id('lesMusiciens')
+                .icon(PostIcon)
+                .schemaType('lesMusiciens')
+                .child(
+                  S.documentList()
+                    .id('lesMusiciens')
+                    .title("Les Musiciens")
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "lesMusiciens" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'lesMusiciens'
+                    })
+                ),                              
             ]
             )
         ),        

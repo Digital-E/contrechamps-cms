@@ -38,6 +38,11 @@ export default {
       type: 'string',
     },
     {
+      title: 'Video Title',
+      name: 'videoTitle',
+      type: 'string',
+    },
+    {
       title: 'Video',
       name: 'video',
       description: "Vimeo Video ID: https://vimeo.com/[ID]",

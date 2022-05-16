@@ -15,6 +15,8 @@ import video from './documents/video'
 import disque from './documents/disque'
 import lEnsemble from './documents/lEnsemble'
 import lEnsembleMenu from './documents/lEnsembleMenu'
+import lesMusiciens from './documents/lesMusiciens'
+import lesMusiciensMenu from './documents/lesMusiciensMenu'
 import menu from './documents/menu'
 import footer from './documents/footer'
 import { translateFields } from './fieldTranslation'
@@ -38,6 +40,8 @@ export default createSchema({
       disque,
       lEnsemble,
       lEnsembleMenu,
+      lesMusiciens,
+      lesMusiciensMenu,
       menu,
       footer
     ])
@@ -51,8 +55,8 @@ export default createSchema({
     // not set localize: true on root level, or
     // set localize: true on any field level will
     // not be changed.
-    .concat(translateFields([
-      article,
-      author
-    ]))
+    // .concat(translateFields([
+    //   article,
+    //   author
+    // ]))
 })
