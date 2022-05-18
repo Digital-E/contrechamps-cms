@@ -32,20 +32,77 @@ export default {
       },
     },
     {
-        title: 'Image',
-        name: 'image',
-        type: 'image'
-        },
-    {
     title: 'Video',
     name: 'video',
     description: "Vimeo Video ID: https://vimeo.com/[ID]",
     type: 'string'
     },
     {
+        title: 'Image',
+        name: 'image',
+        type: 'image'
+    },
+    {
         title: 'Text',
         name: 'text',
         type: 'richText'
     },
+    {
+        title: 'Slices',
+        name: 'slices',
+        type: 'array',
+        of: [
+          {
+            title: 'Image',
+            name: 'image',
+            type: 'image'
+          },
+          {
+            name: 'video',
+            type: 'object',
+            initialValue: {
+              label: "Video"
+            },
+            fields: [
+                {
+                    name: 'label',
+                    type: 'string',
+                    readOnly: true
+                },             
+                {
+                    name: 'video',
+                    description: "Vimeo Video ID: https://vimeo.com/[ID]",
+                    type: 'string' 
+                }
+            ]
+          },
+          {
+            title: 'Text',
+            name: 'Text',
+            type: 'object',
+            initialValue: {
+              label: "Text"
+            },
+            fields: [
+                {
+                    name: 'label',
+                    type: 'string',
+                    readOnly: true
+                },           
+                {
+                  title: 'Text',
+                  name: 'text',
+                  type: 'richText'
+                },
+                {
+                  title: 'Double Column',
+                  name: 'doubleColumn',
+                  type: 'boolean',
+                  initialValue: false
+                }
+            ]
+          }
+        ]
+      }
   ]
 }
