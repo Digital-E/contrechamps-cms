@@ -17,6 +17,7 @@ import lEnsemble from './documents/lEnsemble'
 import lEnsembleMenu from './documents/lEnsembleMenu'
 import lesMusiciens from './documents/lesMusiciens'
 import lesMusiciensMenu from './documents/lesMusiciensMenu'
+import legal from './documents/legal'
 import menu from './documents/menu'
 import footer from './documents/footer'
 import { translateFields } from './fieldTranslation'
@@ -42,6 +43,7 @@ export default createSchema({
       lEnsembleMenu,
       lesMusiciens,
       lesMusiciensMenu,
+      legal,
       menu,
       footer
     ])

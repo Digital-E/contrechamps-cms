@@ -45,6 +45,63 @@ export default {
         title: 'Link Label',
         name: 'linkLabel',
         type: 'string'
-    }
+    },
+    {
+        title: 'Slices',
+        name: 'slices',
+        type: 'array',
+        of: [
+          {
+            title: 'Image',
+            name: 'image',
+            type: 'image'
+          },
+          {
+            name: 'video',
+            type: 'object',
+            initialValue: {
+              label: "Video"
+            },
+            fields: [
+                {
+                    name: 'label',
+                    type: 'string',
+                    readOnly: true
+                },             
+                {
+                    name: 'video',
+                    description: "Vimeo Video ID: https://vimeo.com/[ID]",
+                    type: 'string' 
+                }
+            ]
+          },
+          {
+            title: 'Text',
+            name: 'Text',
+            type: 'object',
+            initialValue: {
+              label: "Text"
+            },
+            fields: [
+                {
+                    name: 'label',
+                    type: 'string',
+                    readOnly: true
+                },           
+                {
+                  title: 'Text',
+                  name: 'text',
+                  type: 'richText'
+                },
+                {
+                  title: 'Double Column',
+                  name: 'doubleColumn',
+                  type: 'boolean',
+                  initialValue: false
+                }
+            ]
+          }
+        ]
+      }
   ]
 }

@@ -29,6 +29,8 @@ export const getDefaultDocumentNode = (props) => {
       props.schemaType === 'menu'
       ||
       props.schemaType === 'footer'
+      ||
+      props.schemaType === 'legal'
       ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
@@ -267,5 +269,15 @@ export default () =>
             .id('footer')
             .schemaType('footer')
             .views(I18nS.getDocumentNodeViewsForSchemaType('footer'))
-        ),                     
+        ),
+      S.listItem()
+        .title('Legal')
+        .icon(DocumentIcon)      
+        .child(
+            S.document()
+            .title('Legal')
+            .id('legal')
+            .schemaType('legal')
+            .views(I18nS.getDocumentNodeViewsForSchemaType('legal'))
+        ),                             
     ])
