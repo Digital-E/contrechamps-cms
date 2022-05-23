@@ -1,7 +1,7 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: "L'ensemble",
+  title: "Ensemble",
   name: 'lEnsemble',
   type: 'document',
   initialValue: () => ({
@@ -28,7 +28,7 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__l-ensemble__${doc.title}`,
+        source: (doc) => `${doc._lang}__ensemble__${doc.title}`,
       },
     },
     {

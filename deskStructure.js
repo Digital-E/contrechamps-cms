@@ -16,6 +16,8 @@ export const getDefaultDocumentNode = (props) => {
       ||
       props.schemaType === 'home'
       ||
+      props.schemaType === 'saison'
+      ||
       props.schemaType === 'media'
       ||
       props.schemaType === 'lEnsemble'
@@ -44,7 +46,7 @@ export default () =>
     .items([
       S.listItem()
         .title('Home')
-        .icon(DocumentIcon)      
+        .icon(PostIcon)      
         .child(
             S.document()
             .title('Home')
@@ -54,7 +56,7 @@ export default () =>
         ),
       S.listItem()
         .title('Saison')
-        .icon(DocumentIcon)      
+        .icon(PostIcon)      
         .child(
             S.document()
             .title('Saison')
@@ -91,12 +93,12 @@ export default () =>
             )
         ),
       S.listItem()
-        .title("L'ensemble")
+        .title("Ensemble")
         .icon(DocumentIcon)
         .child(
           S.list()
             .id('lEnsemble')
-            .title("L'ensemble")
+            .title("Ensemble")
             .items([
               S.listItem()
               .title('Menu')
@@ -109,14 +111,14 @@ export default () =>
                   .views(I18nS.getDocumentNodeViewsForSchemaType('lEnsembleMenu'))
               ),
               S.listItem()
-                .title("L'ensemble")
+                .title("Ensemble")
                 .id('lEnsemble')
                 .icon(PostIcon)
                 .schemaType('lEnsemble')
                 .child(
                   S.documentList()
                     .id('lEnsemble')
-                    .title("L'ensemble")
+                    .title("Ensemble")
                     // Use a GROQ filter to get documents.
                     .filter('_type == "lEnsemble" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })
@@ -252,7 +254,7 @@ export default () =>
         ),                         
       S.listItem()
         .title('Menu')
-        .icon(DocumentIcon)      
+        .icon(PostIcon)      
         .child(
             S.document()
             .title('Menu')
@@ -262,7 +264,7 @@ export default () =>
         ),
       S.listItem()
         .title('Footer')
-        .icon(DocumentIcon)      
+        .icon(PostIcon)      
         .child(
             S.document()
             .title('Footer')
@@ -272,7 +274,7 @@ export default () =>
         ),
       S.listItem()
         .title('Legal')
-        .icon(DocumentIcon)      
+        .icon(PostIcon)      
         .child(
             S.document()
             .title('Legal')

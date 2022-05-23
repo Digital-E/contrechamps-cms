@@ -53,6 +53,19 @@ export default {
           ]
         },
       ]
+    },
+    {
+      title: 'Document Label',
+      name: 'documentLabel',
+      type: 'string',
+    },
+    {
+      title: 'Document',
+      name: 'document',
+      type: 'file',
+      options: {
+        storeOriginalFilename: true
+      }
     }
   ]
 }

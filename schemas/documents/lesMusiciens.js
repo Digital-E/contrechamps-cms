@@ -28,7 +28,7 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__l-ensemble__les-musiciens__${doc.title}`,
+        source: (doc) => `${doc._lang}__ensemble__les-musiciens__${doc.title}`,
       },
     },
     {
