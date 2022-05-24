@@ -47,7 +47,15 @@ export default {
         type: 'url'
     },
     {
-        title: 'Press Link Label',
+      title: 'Press Document',
+      name: 'document',
+      type: 'file',
+      options: {
+        storeOriginalFilename: true
+      }
+    },
+    {
+        title: 'Press Document/Link Label',
         name: 'pressLinkLabel',
         type: 'string'
     }

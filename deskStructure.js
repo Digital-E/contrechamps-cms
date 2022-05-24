@@ -18,7 +18,13 @@ export const getDefaultDocumentNode = (props) => {
       ||
       props.schemaType === 'saison'
       ||
-      props.schemaType === 'media'
+      props.schemaType === 'mediaPage'
+      ||
+      props.schemaType === 'presse'
+      ||
+      props.schemaType === 'video'
+      ||
+      props.schemaType === 'disque'
       ||
       props.schemaType === 'lEnsemble'
       ||
