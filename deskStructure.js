@@ -99,12 +99,12 @@ export default () =>
             )
         ),
       S.listItem()
-        .title("Ensemble")
+        .title("À Propos")
         .icon(DocumentIcon)
         .child(
           S.list()
             .id('lEnsemble')
-            .title("Ensemble")
+            .title("À Propos")
             .items([
               S.listItem()
               .title('Menu')
@@ -117,14 +117,14 @@ export default () =>
                   .views(I18nS.getDocumentNodeViewsForSchemaType('lEnsembleMenu'))
               ),
               S.listItem()
-                .title("Ensemble")
+                .title("À Propos")
                 .id('lEnsemble')
                 .icon(PostIcon)
                 .schemaType('lEnsemble')
                 .child(
                   S.documentList()
                     .id('lEnsemble')
-                    .title("Ensemble")
+                    .title("À Propos")
                     // Use a GROQ filter to get documents.
                     .filter('_type == "lEnsemble" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })

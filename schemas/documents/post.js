@@ -52,6 +52,45 @@ export default {
         type: 'datetime'
     },
     {
+      title: 'Occurences',
+      name: 'occurences',
+      type: 'array',
+      of: [
+        {
+          name: 'occurence',
+          type: 'object',
+          initialValue: {
+            startdate: null,
+            starttime: null,
+            enddate: null,
+            endtime: null
+          },
+          fields: [           
+              {
+                title: 'Start Date',
+                name: 'startdate',
+                type: 'date'
+              },
+              {
+                title: 'Start Time',
+                name: 'starttime',
+                type: 'datetime'
+              },
+              {
+                title: 'End Date',
+                name: 'enddate',
+                type: 'date'
+              },
+              {
+                title: 'End Time',
+                name: 'endtime',
+                type: 'datetime'
+              },
+          ]
+        }
+      ]
+    },
+    {
         title: 'Location',
         name: 'location',
         type: 'richText'
