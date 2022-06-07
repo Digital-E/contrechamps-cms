@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import * as I18nS from 'sanity-plugin-intl-input/lib/structure';
+import * as I18nS from 'sanity-plugin-intl-input/lib/structure'
 import { i18n } from './schemas/documentTranslation'
 
 import {
@@ -87,6 +87,11 @@ export default () =>
                   S.documentList()
                     .id('post')
                     .title('Événements')
+                    .defaultOrdering([{field: 'startdate', direction: 'asc'}])
+                    .menuItems([
+                      S.orderingMenuItem({title: 'Date ascending', by: [{ field: "startdate", direction: "asc" }]}),
+                      S.orderingMenuItem({title: 'Date descending', by: [{ field: "startdate", direction: "desc" }]})
+                      ])
                     // Use a GROQ filter to get documents.
                     .filter('_type == "post" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })

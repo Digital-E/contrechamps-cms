@@ -54,7 +54,7 @@ export default {
           {
             title: 'Image',
             name: 'image',
-            type: 'image'
+            type: 'captionImage'
           },
           {
             name: 'video',

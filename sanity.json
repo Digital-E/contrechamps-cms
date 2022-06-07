@@ -13,7 +13,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/production-preview",
-    "intl-input"
+    "intl-input",
+    "@sanity/orderable-document-list"
   ],
   "env": {
     "development": {
