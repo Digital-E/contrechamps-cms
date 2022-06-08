@@ -58,5 +58,30 @@ export default {
       name: 'textfieldtwo',
       type: 'richText'
     },
+    {
+      title: 'Circles',
+      name: 'circles',
+      type: 'array',
+      of: [
+        {
+          name: 'circle',
+          type: 'object',
+          fields: [
+              {
+                  name: 'label',
+                  type: 'richText' 
+              },
+              {
+                  name: 'videoMp4',
+                  type: 'file' 
+              },
+              {
+                name: 'videoWebm',
+                type: 'file' 
+            }
+          ]
+        },
+      ]
+    },
   ]
 }
