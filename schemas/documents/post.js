@@ -121,6 +121,18 @@ export default {
       },
     },
     {
+      name: 'videoMp4',
+      type: 'file' 
+    },
+    {
+    name: 'videoWebm',
+    type: 'file' 
+    },
+    {
+      name: 'label',
+      type: 'richText' 
+    },    
+    {
         title: 'Ticket Link',
         name: 'ticketLink',
         type: 'url'
