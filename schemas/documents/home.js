@@ -78,7 +78,7 @@ export default {
               {
                 name: 'videoWebm',
                 type: 'file' 
-            }
+              }
           ]
         },
       ]
