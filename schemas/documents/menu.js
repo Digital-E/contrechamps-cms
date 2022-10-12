@@ -36,6 +36,11 @@ export default {
         ]
       },
       {
+        title: 'Color',
+        name: 'color',
+        type: 'color'
+      },
+      {
         title: 'Cookie Text',
         name: 'cookietext',
         type: 'richText'

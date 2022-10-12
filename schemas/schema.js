@@ -8,6 +8,7 @@ import article from './documents/article'
 import author from './documents/author'
 import home from './documents/home'
 import post from './documents/post'
+import news from './documents/news'
 import saison from './documents/saison'
 import mediaPage from './documents/mediaPage'
 import presse from './documents/presse'
@@ -34,6 +35,7 @@ export default createSchema({
       captionImage,
       home,
       post,
+      news,
       saison,
       mediaPage,
       presse,

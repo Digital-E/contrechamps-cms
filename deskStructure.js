@@ -14,6 +14,8 @@ export const getDefaultDocumentNode = (props) => {
   if (
       props.schemaType === 'post'
       ||
+      props.schemaType === 'news'
+      ||
       props.schemaType === 'home'
       ||
       props.schemaType === 'saison'
@@ -103,6 +105,39 @@ export default () =>
             ]
             )
         ),
+        S.listItem()
+        .title('Actualités')
+        .icon(DocumentIcon)
+        .child(
+          S.list()
+            .id('news')
+            .title('Actualités')
+            .items([
+              S.listItem()
+                .title('Actualités')
+                .id('news')
+                .icon(PostIcon)
+                .schemaType('news')
+                .child(
+                  S.documentList()
+                    .id('news')
+                    .title('Événements')
+                    .defaultOrdering([{field: 'startdate', direction: 'asc'}])
+                    .menuItems([
+                      S.orderingMenuItem({title: 'Date ascending', by: [{ field: "startdate", direction: "asc" }]}),
+                      S.orderingMenuItem({title: 'Date descending', by: [{ field: "startdate", direction: "desc" }]})
+                      ])
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "news" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'news'
+                    })
+                )
+            ]
+            )
+        ),        
       S.listItem()
         .title("À Propos")
         .icon(DocumentIcon)

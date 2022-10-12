@@ -14,7 +14,8 @@
     "@sanity/desk-tool",
     "@sanity/production-preview",
     "intl-input",
-    "@sanity/orderable-document-list"
+    "@sanity/orderable-document-list",
+    "@sanity/color-input"
   ],
   "env": {
     "development": {
