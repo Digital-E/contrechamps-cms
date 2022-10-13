@@ -1,8 +1,8 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Video',
-  name: 'video',
+  title: 'Photo',
+  name: 'photo',
   type: 'document',
   initialValue: () => ({
     _lang: 'fr',
@@ -28,7 +28,7 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__media__videos__${doc.title}`,
+        source: (doc) => `${doc._lang}__media__photos__${doc.title}`,
       },
     },
     {

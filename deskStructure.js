@@ -28,6 +28,8 @@ export const getDefaultDocumentNode = (props) => {
       ||
       props.schemaType === 'disque'
       ||
+      props.schemaType === 'photo'
+      ||
       props.schemaType === 'lEnsemble'
       ||
       props.schemaType === 'lEnsembleMenu'
@@ -41,6 +43,8 @@ export const getDefaultDocumentNode = (props) => {
       props.schemaType === 'footer'
       ||
       props.schemaType === 'legal'
+      ||
+      props.schemaType === 'documents'
       ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
@@ -293,8 +297,36 @@ export default () =>
                     .canHandleIntent((_name, params, _context) => {
                       // Assume we can handle all intents (actions) regarding post documents
                       return params.type === 'disque'
+                    })                  
+                ),
+                S.listItem()
+                .title('Page Photos')
+                .icon(DocumentIcon)
+                .schemaType('mediaPage')
+                .child(
+                  S.document()
+                  .title('Page Photos')
+                  .id('photosPage')
+                  .schemaType('mediaPage')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('mediaPage'))
+                ),                
+              S.listItem()
+                .title('Photos')
+                .id('photos')
+                .icon(PostIcon)
+                .schemaType('photo')
+                .child(
+                  S.documentList()
+                    .id('photos')
+                    .title('Photos')
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "photo" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'photo'
                     })
-                )                                  
+                )                                                    
             ]
             )
         ),                         
@@ -327,5 +359,15 @@ export default () =>
             .id('legal')
             .schemaType('legal')
             .views(I18nS.getDocumentNodeViewsForSchemaType('legal'))
-        ),                             
+        ),
+      S.listItem()
+        .title('Documents')
+        .icon(PostIcon)      
+        .child(
+            S.document()
+            .title('Documents')
+            .id('documents')
+            .schemaType('documents')
+            .views(I18nS.getDocumentNodeViewsForSchemaType('documents'))
+        ),                                     
     ])

@@ -36,6 +36,7 @@ export default {
           { title: "Presse", value: "presse"},
           { title: "Vidéos", value: "video"},
           { title: "Disques", value: "disque"},
+          { title: "Photos", value: "photo"},
         ]
       }
     },

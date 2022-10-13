@@ -14,6 +14,7 @@ import mediaPage from './documents/mediaPage'
 import presse from './documents/presse'
 import video from './documents/video'
 import disque from './documents/disque'
+import photo from './documents/photo'
 import lEnsemble from './documents/lEnsemble'
 import lEnsembleMenu from './documents/lEnsembleMenu'
 import lesMusiciens from './documents/lesMusiciens'
@@ -21,6 +22,7 @@ import lesMusiciensMenu from './documents/lesMusiciensMenu'
 import legal from './documents/legal'
 import menu from './documents/menu'
 import footer from './documents/footer'
+import documents from './documents/documents'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -41,13 +43,15 @@ export default createSchema({
       presse,
       video,
       disque,
+      photo,
       lEnsemble,
       lEnsembleMenu,
       lesMusiciens,
       lesMusiciensMenu,
       legal,
       menu,
-      footer
+      footer,
+      documents
     ])
     // Include documents with field translation support.
     // This changes their structure, transforming
