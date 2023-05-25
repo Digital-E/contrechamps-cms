@@ -141,7 +141,17 @@ export default {
         title: 'Ticket Link Label',
         name: 'ticketLinkLabel',
         type: 'string'
-    },          
+    }, 
+    {
+        title: 'Ticket Link Two',
+        name: 'ticketLinkTwo',
+        type: 'url'
+    },
+    {
+        title: 'Ticket Link Label Two',
+        name: 'ticketLinkLabelTwo',
+        type: 'string'
+    },              
     {
         title: 'Information',
         name: 'information',
