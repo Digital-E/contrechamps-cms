@@ -35,7 +35,24 @@ export default {
         title: 'Start Date',
         name: 'startdate',
         type: 'date'
-    },        
+    }, 
+    {
+      title: 'Featured',
+      name: 'featured',
+      type: 'boolean',
+      initialValue: false
+    },
+    {
+      title: 'Image',
+      name: 'image',
+      type: 'captionImage'
+    },
+    {
+      title: 'Video',
+      name: 'video',
+      type: 'string',
+      description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]"
+    },     
     {
         title: 'Text Vignette',
         name: 'textVignette',
