@@ -33,32 +33,6 @@ export default {
       },
     },
     {
-      title: 'News Title',
-      name: 'newsTitle',
-      type: 'string',
-    },
-    {
-      title: 'Video Title',
-      name: 'videoTitle',
-      type: 'string',
-    },
-    {
-      title: 'Video',
-      name: 'video',
-      description: "Vimeo Video ID: https://vimeo.com/[ID]",
-      type: 'string'
-    },
-    {
-      title: 'Text Field One',
-      name: 'textfieldone',
-      type: 'richText'
-    },
-    {
-      title: 'Text Field Two',
-      name: 'textfieldtwo',
-      type: 'richText'
-    },
-    {
       title: 'Circles',
       name: 'circles',
       type: 'array',
