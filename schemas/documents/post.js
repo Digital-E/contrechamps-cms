@@ -34,7 +34,7 @@ export default {
     {
         title: 'Start Date',
         name: 'startdate',
-        type: 'date'
+        type: 'datetime'
     },
     {
         title: 'End Date',
