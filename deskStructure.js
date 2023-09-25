@@ -93,7 +93,7 @@ export default () =>
                   S.documentList()
                     .id('post')
                     .title('Événements')
-                    .defaultOrdering([{field: 'startdate', direction: 'asc'}])
+                    .defaultOrdering([{field: 'startdate', direction: 'desc'}])
                     .menuItems([
                       S.orderingMenuItem({title: 'Date ascending', by: [{ field: "startdate", direction: "asc" }]}),
                       S.orderingMenuItem({title: 'Date descending', by: [{ field: "startdate", direction: "desc" }]}),
