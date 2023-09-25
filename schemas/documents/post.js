@@ -11,6 +11,22 @@ export default {
   // via the sanity-intl plugin. You can of course modify this object should you
   // need to on a document-to-document bassis.
   i18n,
+  orderings: [
+    {
+      title: 'Release Date, New',
+      name: 'releaseDateDesc',
+      by: [
+        {field: 'startdate', direction: 'desc'}
+      ]
+    },
+    // {
+    //   title: 'Release Date, Old',
+    //   name: 'releaseDateAsc',
+    //   by: [
+    //     {field: 'startdate', direction: 'asc'}
+    //   ]
+    // }
+  ],
   fields: [
     {
       title: 'Title',

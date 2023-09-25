@@ -96,7 +96,9 @@ export default () =>
                     .defaultOrdering([{field: 'startdate', direction: 'asc'}])
                     .menuItems([
                       S.orderingMenuItem({title: 'Date ascending', by: [{ field: "startdate", direction: "asc" }]}),
-                      S.orderingMenuItem({title: 'Date descending', by: [{ field: "startdate", direction: "desc" }]})
+                      S.orderingMenuItem({title: 'Date descending', by: [{ field: "startdate", direction: "desc" }]}),
+                      // S.orderingMenuItem({title: 'Created At ascending', by: [{ field: "_createdAt", direction: "asc" }]}),
+                      // S.orderingMenuItem({title: 'Created At descending', by: [{ field: "_createdAt", direction: "desc" }]})
                       ])
                     // Use a GROQ filter to get documents.
                     .filter('_type == "post" && (!defined(_lang) || _lang == $baseLang)')
