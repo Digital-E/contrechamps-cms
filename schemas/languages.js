@@ -2,7 +2,7 @@
 // They need 'id' and 'title'
 export const languages = [
     { name: 'fr', title: 'French' },
-    { name: 'en_gb', title: 'English (UK)' },
+    { name: 'en', title: 'English (UK)' },
   ];
   
 export const baseLanguage = languages[0]
