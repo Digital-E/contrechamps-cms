@@ -6,7 +6,7 @@ export const i18n = {
   base: baseLanguage.name,
   languages,
   idStructure: "subpath",
-  referenceBehavior: "hard",
+  referenceBehavior: 'weak',
   fieldNames: {
     lang: '_lang',
     references: '_langRefs'

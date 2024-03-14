@@ -18,6 +18,7 @@
     "@sanity/base": "^2.36.2",
     "@sanity/color-input": "^2.36.1",
     "@sanity/core": "^2.36.2",
+    "@sanity/dashboard": "^2.36.0",
     "@sanity/default-layout": "^2.36.2",
     "@sanity/default-login": "^2.36.2",
     "@sanity/desk-tool": "^2.36.2",
@@ -31,6 +32,7 @@
     "react-dom": "^17.0",
     "react-icons": "^4.3.1",
     "sanity-plugin-intl-input": "^5.6.5",
+    "sanity-plugin-vercel-deploy": "^2.1.6",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
