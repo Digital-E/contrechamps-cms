@@ -52,6 +52,7 @@ export default {
         name: 'startdate',
         type: 'datetime',
         validation: (Rule) => Rule.required(),
+        initialValue: () => (new Date()).toISOString()
     },
     {
         title: 'End Date',
@@ -232,9 +233,6 @@ export default {
       ]
     }
   ],
-  initialValue: {
-    startdate: (new Date()).toISOString(),
-  },
   preview: {
     select: {
       title: 'title',

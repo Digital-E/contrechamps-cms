@@ -34,7 +34,9 @@ export default {
     {
         title: 'Start Date',
         name: 'startdate',
-        type: 'date'
+        type: 'date',
+        validation: (Rule) => Rule.required(),
+        initialValue: () => (new Date()).toISOString().split('T')[0]
     }, 
     {
       title: 'Featured',
