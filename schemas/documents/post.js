@@ -50,7 +50,8 @@ export default {
     {
         title: 'Start Date',
         name: 'startdate',
-        type: 'datetime'
+        type: 'datetime',
+        validation: (Rule) => Rule.required(),
     },
     {
         title: 'End Date',
