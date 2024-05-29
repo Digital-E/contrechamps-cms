@@ -232,6 +232,9 @@ export default {
       ]
     }
   ],
+  initialValue: {
+    startdate: (new Date()).toISOString(),
+  },
   preview: {
     select: {
       title: 'title',
