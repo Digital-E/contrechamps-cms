@@ -36,6 +36,11 @@ export default {
         ]
       },
       {
+        title: 'Background Color',
+        name: 'backgroundColor',
+        type: 'color'
+      },
+      {
         title: 'Color',
         name: 'color',
         type: 'color'
@@ -43,6 +48,11 @@ export default {
       {
         title: 'Secondary Color',
         name: 'secondaryColor',
+        type: 'color'
+      },
+      {
+        title: 'Ternary Color',
+        name: 'ternaryColor',
         type: 'color'
       },
       {
