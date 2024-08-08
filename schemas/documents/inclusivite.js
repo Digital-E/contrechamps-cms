@@ -1,8 +1,8 @@
 import { i18n } from '../documentTranslation'
 
 export default {
-  title: 'Actualités',
-  name: 'news',
+  title: "Inclusivite",
+  name: 'inclusivite',
   type: 'document',
   initialValue: () => ({
     _lang: 'fr',
@@ -28,43 +28,8 @@ export default {
       type: 'slug',
       options: {
         // source: (doc) => `${doc._lang}__${doc._type}__${doc.title}`,
-        source: (doc) => `${doc._lang}__actualites__${doc.title}`,
+        source: (doc) => `${doc._lang}__inclusivite__${doc.title}`,
       },
-    },
-    {
-        title: 'Start Date',
-        name: 'startdate',
-        type: 'date',
-        validation: (Rule) => Rule.required(),
-        initialValue: () => (new Date()).toISOString().split('T')[0]
-    }, 
-    {
-      title: 'Featured',
-      name: 'featured',
-      type: 'boolean',
-      initialValue: false
-    },
-    {
-      title: 'Inclusivite',
-      name: 'inclusivite',
-      type: 'boolean',
-      initialValue: false
-    },
-    {
-      title: 'Image',
-      name: 'image',
-      type: 'captionImage'
-    },
-    {
-      title: 'Video',
-      name: 'video',
-      type: 'string',
-      description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]"
-    },     
-    {
-        title: 'Text Vignette',
-        name: 'textVignette',
-        type: 'richText'
     },
     {
       title: 'Slices',
@@ -124,10 +89,4 @@ export default {
       ]
     }
   ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'image'
-    }
-  }
 }

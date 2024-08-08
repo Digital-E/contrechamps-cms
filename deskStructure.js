@@ -371,5 +371,43 @@ export default () =>
             .id('documents')
             .schemaType('documents')
             .views(I18nS.getDocumentNodeViewsForSchemaType('documents'))
-        ),                                     
+        ),
+      S.listItem()
+        .title("Inclusivite")
+        .icon(DocumentIcon)
+        .child(
+          S.list()
+            .id('inclusivite')
+            .title("Inclusivite")
+            .items([
+              S.listItem()
+              .title('Menu')
+              .icon(DocumentIcon)      
+              .child(
+                  S.document()
+                  .title('Menu')
+                  .id('inclusiviteMenu')
+                  .schemaType('inclusiviteMenu')
+                  .views(I18nS.getDocumentNodeViewsForSchemaType('inclusiviteMenu'))
+              ),
+              S.listItem()
+                .title("Inclusivite")
+                .id('inclusivite')
+                .icon(PostIcon)
+                .schemaType('inclusivite')
+                .child(
+                  S.documentList()
+                    .id('inclusivite')
+                    .title("Inclusivite")
+                    // Use a GROQ filter to get documents.
+                    .filter('_type == "inclusivite" && (!defined(_lang) || _lang == $baseLang)')
+                    .params({ baseLang: i18n.base })
+                    .canHandleIntent((_name, params, _context) => {
+                      // Assume we can handle all intents (actions) regarding post documents
+                      return params.type === 'inclusivite'
+                    })
+                )                           
+            ]
+            )
+        ),                                               
     ])

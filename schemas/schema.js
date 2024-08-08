@@ -23,6 +23,8 @@ import legal from './documents/legal'
 import menu from './documents/menu'
 import footer from './documents/footer'
 import documents from './documents/documents'
+import inclusivite from './documents/inclusivite'
+import inclusiviteMenu from './documents/inclusiviteMenu'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -51,7 +53,9 @@ export default createSchema({
       legal,
       menu,
       footer,
-      documents
+      documents,
+      inclusivite,
+      inclusiviteMenu
     ])
     // Include documents with field translation support.
     // This changes their structure, transforming

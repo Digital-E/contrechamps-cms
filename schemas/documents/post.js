@@ -39,6 +39,12 @@ export default {
       type: 'string',
     },
     {
+      title: 'Inclusivite',
+      name: 'inclusivite',
+      type: 'boolean',
+      initialValue: false
+    },
+    {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
