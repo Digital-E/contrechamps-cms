@@ -45,6 +45,8 @@ export const getDefaultDocumentNode = (props) => {
       props.schemaType === 'legal'
       ||
       props.schemaType === 'documents'
+      ||
+      props.schemaType === 'inclusivite'      
       ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
