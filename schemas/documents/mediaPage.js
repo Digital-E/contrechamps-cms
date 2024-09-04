@@ -44,6 +44,23 @@ export default {
       title: 'Text',
       name: 'text',
       type: 'richText'
-  },
+    },
+    {
+      title: 'Media Items',
+      name: 'mediaItems',
+      type: 'array',
+      of: [
+        {
+          name: 'mediaItem',
+          type: 'reference',
+          to: [
+            {type: 'presse'},
+            {type: 'video'},
+            {type: 'disque'},
+            {type: 'photo'}
+          ]
+      }
+      ]
+    },
   ]
 }
