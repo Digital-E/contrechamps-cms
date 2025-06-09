@@ -29,14 +29,19 @@ export default {
   ],
   fields: [
     {
-      title: 'Title',
+      title: 'Title SEO',
       name: 'title',
       type: 'string',
     },
     {
-      title: 'Content',
+      title: 'Content SEO',
       name: 'content',
       type: 'string',
+    },
+    {
+      title: 'Title',
+      name: 'pageTitle',
+      type: 'richText',
     },
     {
       title: 'Inclusivite',
