@@ -92,7 +92,15 @@ export default {
                   name: 'video',
                   description: "Vimeo Video ID: https://vimeo.com/[ID]",
                   type: 'string' 
-              }
+              },
+              {
+                name: 'caption',
+                type: 'string',
+                title: 'Caption',
+                options: {
+                  isHighlighted: true
+                }
+              }               
           ]
         },
         {

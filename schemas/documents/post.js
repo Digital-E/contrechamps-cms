@@ -212,7 +212,15 @@ export default {
                   name: 'video',
                   description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]",
                   type: 'string' 
-              }
+              },
+              {
+                name: 'caption',
+                type: 'string',
+                title: 'Caption',
+                options: {
+                  isHighlighted: true
+                }
+              }            
           ]
         },
         {
