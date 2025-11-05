@@ -104,14 +104,25 @@ export default {
           name: 'Grid',
           type: 'object',  
           initialValue: {
-            label: "Grid"
+            label: "Grid",
+            columns: "2"
           },               
           fields: [
             {
                 name: 'label',
                 type: 'string',
                 readOnly: true
-            },   
+            },
+            {
+                name: 'columns',
+                type: 'string',
+                options: {
+                  list: [
+                    { title: '2', value: '2' },
+                    { title: '3', value: '3' },
+                  ],
+                }              
+            },                 
             {
               title: 'Grid Items',
               name: 'gridItems',
@@ -152,7 +163,7 @@ export default {
               ]
             }          
           ]
-        },          
+        },        
         ]
       }
   ]

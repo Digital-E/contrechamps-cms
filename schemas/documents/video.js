@@ -99,60 +99,71 @@ export default {
                 }
             ]
           },
-          {
-            title: 'Grid',
-            name: 'Grid',
-            type: 'object',  
-            initialValue: {
-              label: "Grid"
-            },               
-            fields: [
-              {
-                  name: 'label',
-                  type: 'string',
-                  readOnly: true
-              },   
-              {
-                title: 'Grid Items',
-                name: 'gridItems',
-                type: 'array',
-                of: [
-                  {
-                    title: 'Image',
-                    name: 'image',
-                    type: 'captionImage'
+        {
+          title: 'Grid',
+          name: 'Grid',
+          type: 'object',  
+          initialValue: {
+            label: "Grid",
+            columns: "2"
+          },               
+          fields: [
+            {
+                name: 'label',
+                type: 'string',
+                readOnly: true
+            },
+            {
+                name: 'columns',
+                type: 'string',
+                options: {
+                  list: [
+                    { title: '2', value: '2' },
+                    { title: '3', value: '3' },
+                  ],
+                }              
+            },                 
+            {
+              title: 'Grid Items',
+              name: 'gridItems',
+              type: 'array',
+              of: [
+                {
+                  title: 'Image',
+                  name: 'image',
+                  type: 'captionImage'
+                },
+                {
+                  name: 'video',
+                  type: 'object',
+                  initialValue: {
+                    label: "Video"
                   },
-                  {
-                    name: 'video',
-                    type: 'object',
-                    initialValue: {
-                      label: "Video"
-                    },
-                    fields: [
-                        {
-                            name: 'label',
-                            type: 'string',
-                            readOnly: true
-                        },             
-                        {
-                            name: 'video',
-                            description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]",
-                            type: 'string' 
-                        },
-                        {
-                          name: 'caption',
+                  fields: [
+                      {
+                          name: 'label',
                           type: 'string',
-                          title: 'Caption',
-                          options: {
-                            isHighlighted: true
-                          }
-                        }            
-                    ]
-                  },                  
-                ]
-              }          
-            ]
-          },          
+                          readOnly: true
+                      },             
+                      {
+                          name: 'video',
+                          description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]",
+                          type: 'string' 
+                      },
+                      {
+                        name: 'caption',
+                        type: 'string',
+                        title: 'Caption',
+                        options: {
+                          isHighlighted: true
+                        }
+                      }            
+                  ]
+                },                  
+              ]
+            }          
+          ]
+        },          
         ]
       }
   ]
