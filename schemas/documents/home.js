@@ -33,29 +33,63 @@ export default {
       },
     },
     {
-      title: 'Circles',
-      name: 'circles',
+      title: 'Slides',
+      name: 'slides',
       type: 'array',
       of: [
         {
-          name: 'circle',
+          name: 'slide',
           type: 'object',
           fields: [
               {
                   name: 'label',
-                  type: 'richText' 
+                  type: 'string',
+                  initialValue: 'Slide',
+                  readOnly: true
               },
+              // {
+              //   title: 'Url',
+              //   name: 'url',
+              //   type: 'string'
+              // },              
               {
+                  title: 'Video',
                   name: 'videoMp4',
                   type: 'file' 
               },
               {
-                name: 'videoWebm',
-                type: 'file' 
+                title: 'Image',
+                name: 'image',
+                type: 'image'
               }
           ]
         },
       ]
-    },
+    },    
+    // {
+    //   title: 'Circles',
+    //   name: 'circles',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       name: 'circle',
+    //       type: 'object',
+    //       fields: [
+    //           {
+    //               name: 'label',
+    //               type: 'richText' 
+    //           },
+    //           {
+    //               name: 'videoMp4',
+    //               type: 'file' 
+    //           },
+    //           {
+    //             name: 'videoWebm',
+    //             type: 'file' 
+    //           }
+    //       ]
+    //     },
+    //   ]
+    // },
   ]
 }
