@@ -25,6 +25,7 @@ import footer from './documents/footer'
 import documents from './documents/documents'
 import inclusivite from './documents/inclusivite'
 import inclusiviteMenu from './documents/inclusiviteMenu'
+import inscriptionNewsletter from './documents/inscription-newsletter'
 import { translateFields } from './fieldTranslation'
 
 export default createSchema({
@@ -55,7 +56,8 @@ export default createSchema({
       footer,
       documents,
       inclusivite,
-      inclusiviteMenu
+      inclusiviteMenu,
+      inscriptionNewsletter
     ])
     // Include documents with field translation support.
     // This changes their structure, transforming

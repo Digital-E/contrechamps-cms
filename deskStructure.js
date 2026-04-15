@@ -46,7 +46,9 @@ export const getDefaultDocumentNode = (props) => {
       ||
       props.schemaType === 'documents'
       ||
-      props.schemaType === 'inclusivite'      
+      props.schemaType === 'inclusivite'   
+      ||
+      props.schemaType === 'inscriptionNewsletter'      
       ) {
     return S.document().views(I18nS.getDocumentNodeViewsForSchemaType(props.schemaType));
   }
@@ -411,5 +413,15 @@ export default () =>
                 )                           
             ]
             )
-        ),                                               
+        ), 
+      S.listItem()
+        .title('Inscription Newsletter')
+        .icon(PostIcon)      
+        .child(
+            S.document()
+            .title('Inscription Newsletter')
+            .id('inscriptionNewsletter')
+            .schemaType('inscriptionNewsletter')
+            .views(I18nS.getDocumentNodeViewsForSchemaType('inscriptionNewsletter'))  
+        )                                                    
     ])
