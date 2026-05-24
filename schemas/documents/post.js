@@ -44,6 +44,16 @@ export default {
       type: 'richText',
     },
     {
+      title: 'Subtitle',
+      name: 'subtitle',
+      type: 'string',
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'richText',
+    },
+    {
       title: 'Inclusivite',
       name: 'inclusivite',
       type: 'boolean',
@@ -312,6 +322,71 @@ export default {
                 },                  
               ]
             }          
+          ]
+        },
+      ]
+    },
+    {
+      title: 'Slices (col droite)',
+      name: 'slicesRight',
+      type: 'array',
+      of: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'captionImage'
+        },
+        {
+          name: 'video',
+          type: 'object',
+          initialValue: {
+            label: "Video"
+          },
+          fields: [
+              {
+                  name: 'label',
+                  type: 'string',
+                  readOnly: true
+              },
+              {
+                  name: 'video',
+                  description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]",
+                  type: 'string'
+              },
+              {
+                name: 'caption',
+                type: 'string',
+                title: 'Caption',
+                options: {
+                  isHighlighted: true
+                }
+              }
+          ]
+        },
+        {
+          title: 'Text',
+          name: 'Text',
+          type: 'object',
+          initialValue: {
+            label: "Text"
+          },
+          fields: [
+              {
+                  name: 'label',
+                  type: 'string',
+                  readOnly: true
+              },
+              {
+                title: 'Text',
+                name: 'text',
+                type: 'richText'
+              },
+              {
+                title: 'Double Column',
+                name: 'doubleColumn',
+                type: 'boolean',
+                initialValue: false
+              }
           ]
         },
       ]
