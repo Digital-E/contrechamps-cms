@@ -327,7 +327,7 @@ export default {
       ]
     },
     {
-      title: 'Slices (col droite)',
+      title: 'Slices Right',
       name: 'slicesRight',
       type: 'array',
       of: [
