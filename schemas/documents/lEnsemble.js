@@ -97,11 +97,11 @@ export default {
         {
           title: 'Grid',
           name: 'Grid',
-          type: 'object',  
+          type: 'object',
           initialValue: {
             label: "Grid",
             columns: "2"
-          },               
+          },
           fields: [
             {
                 name: 'label',
@@ -116,8 +116,8 @@ export default {
                     { title: '2', value: '2' },
                     { title: '3', value: '3' },
                   ],
-                }              
-            },                 
+                }
+            },
             {
               title: 'Grid Items',
               name: 'gridItems',
@@ -139,11 +139,11 @@ export default {
                           name: 'label',
                           type: 'string',
                           readOnly: true
-                      },             
+                      },
                       {
                           name: 'video',
                           description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]",
-                          type: 'string' 
+                          type: 'string'
                       },
                       {
                         name: 'caption',
@@ -152,13 +152,59 @@ export default {
                         options: {
                           isHighlighted: true
                         }
-                      }            
+                      }
                   ]
-                },                  
+                },
               ]
-            }          
+            }
           ]
-        },      
+        },
+        {
+          title: 'Logo Grid',
+          name: 'LogoGrid',
+          type: 'object',
+          initialValue: {
+            label: "Logo Grid"
+          },
+          fields: [
+            {
+              name: 'label',
+              type: 'string',
+              readOnly: true
+            },
+            {
+              title: 'Logos',
+              name: 'logos',
+              type: 'array',
+              of: [
+                {
+                  title: 'Logo',
+                  name: 'logo',
+                  type: 'object',
+                  preview: {
+                    select: {
+                      title: 'url',
+                      media: 'image'
+                    }
+                  },
+                  fields: [
+                    {
+                      title: 'Image',
+                      name: 'image',
+                      type: 'captionImage'
+                    },
+                    {
+                      title: 'URL',
+                      name: 'url',
+                      type: 'url',
+                      description: 'Lien vers le site externe'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
       ]
     },
     {
@@ -285,6 +331,52 @@ export default {
                       }
                   ]
                 },
+              ]
+            }
+          ]
+        },
+        {
+          title: 'Logo Grid',
+          name: 'LogoGrid',
+          type: 'object',
+          initialValue: {
+            label: "Logo Grid"
+          },
+          fields: [
+            {
+              name: 'label',
+              type: 'string',
+              readOnly: true
+            },
+            {
+              title: 'Logos',
+              name: 'logos',
+              type: 'array',
+              of: [
+                {
+                  title: 'Logo',
+                  name: 'logo',
+                  type: 'object',
+                  preview: {
+                    select: {
+                      title: 'url',
+                      media: 'image'
+                    }
+                  },
+                  fields: [
+                    {
+                      title: 'Image',
+                      name: 'image',
+                      type: 'captionImage'
+                    },
+                    {
+                      title: 'URL',
+                      name: 'url',
+                      type: 'url',
+                      description: 'Lien vers le site externe'
+                    }
+                  ]
+                }
               ]
             }
           ]

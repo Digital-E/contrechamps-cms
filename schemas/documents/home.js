@@ -55,12 +55,24 @@ export default {
               {
                   title: 'Video',
                   name: 'videoMp4',
-                  type: 'file' 
+                  type: 'file'
               },
               {
                 title: 'Image',
                 name: 'image',
                 type: 'image'
+              },
+              {
+                  title: 'Video (mobile)',
+                  name: 'videoMp4Mobile',
+                  type: 'file',
+                  description: 'Optional. Replaces the video on mobile if provided.'
+              },
+              {
+                title: 'Image (mobile)',
+                name: 'imageMobile',
+                type: 'image',
+                description: 'Optional. Replaces the image on mobile if provided.'
               }
           ]
         },
