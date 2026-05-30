@@ -157,16 +157,6 @@ export default () =>
             .title("À Propos")
             .items([
               S.listItem()
-              .title('Menu')
-              .icon(DocumentIcon)      
-              .child(
-                  S.document()
-                  .title('Menu')
-                  .id('lEnsembleMenu')
-                  .schemaType('lEnsembleMenu')
-                  .views(I18nS.getDocumentNodeViewsForSchemaType('lEnsembleMenu'))
-              ),
-              S.listItem()
                 .title("À Propos")
                 .id('lEnsemble')
                 .icon(PostIcon)
@@ -183,16 +173,6 @@ export default () =>
                       return params.type === 'lEnsemble'
                     })
                 ),
-              S.listItem()
-              .title('Les Musiciens Menu')
-              .icon(DocumentIcon)      
-              .child(
-                  S.document()
-                  .title('Les Musiciens Menu')
-                  .id('lesMusiciensMenu')
-                  .schemaType('lesMusiciensMenu')
-                  .views(I18nS.getDocumentNodeViewsForSchemaType('lesMusiciensMenu'))
-              ),
               S.listItem()
                 .title("Les Musiciens")
                 .id('lesMusiciens')
