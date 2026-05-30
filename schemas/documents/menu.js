@@ -22,14 +22,47 @@ export default {
           {
             name: 'menuItem',
             type: 'object',
+            preview: { select: { title: 'label' } },
             fields: [
                 {
                     name: 'label',
-                    type: 'string' 
+                    type: 'string'
                 },
                 {
                     name: 'url',
-                    type: 'string' 
+                    type: 'string'
+                },
+                {
+                    title: 'Sub-items',
+                    name: 'subItems',
+                    type: 'array',
+                    of: [
+                      {
+                        name: 'subItem',
+                        type: 'object',
+                        preview: { select: { title: 'label' } },
+                        fields: [
+                          { name: 'label', type: 'string' },
+                          { name: 'url', type: 'string' },
+                          {
+                            title: 'Sub-sub-items',
+                            name: 'subItems',
+                            type: 'array',
+                            of: [
+                              {
+                                name: 'subSubItem',
+                                type: 'object',
+                                preview: { select: { title: 'label' } },
+                                fields: [
+                                  { name: 'label', type: 'string' },
+                                  { name: 'url', type: 'string' }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                 }
             ]
           },
