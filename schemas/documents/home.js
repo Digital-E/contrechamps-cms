@@ -47,11 +47,12 @@ export default {
                   initialValue: 'Slide',
                   readOnly: true
               },
-              // {
-              //   title: 'Url',
-              //   name: 'url',
-              //   type: 'string'
-              // },              
+              {
+                title: 'URL',
+                name: 'url',
+                type: 'string',
+                description: 'Optional. Makes the slide clickable. Use a full URL (https://...) for an external link, or a relative path (e.g. /fr/saison) for an internal page.'
+              },
               {
                   title: 'Video',
                   name: 'videoMp4',
