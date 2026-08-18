@@ -32,10 +32,15 @@ export default {
       },
     },
     {
+        title: 'Image',
+        name: 'image',
+        type: 'image'
+    },
+    {
       title: 'Text',
       name: 'text',
       type: 'richText',
-    },    
+    },
     {
         title: 'Link',
         name: 'link',
