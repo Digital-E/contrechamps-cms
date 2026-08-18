@@ -221,6 +221,15 @@ export default () =>
                   S.documentList()
                     .id('presse')
                     .title('Presse')
+                    .defaultOrdering([{field: 'date', direction: 'desc'}])
+                    .menuItems([
+                      S.orderingMenuItem({title: 'Name A-Z', by: [{ field: "title", direction: "asc" }]}),
+                      S.orderingMenuItem({title: 'Name Z-A', by: [{ field: "title", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date ascending', by: [{ field: "date", direction: "asc" }]}),
+                      S.orderingMenuItem({title: 'Date descending', by: [{ field: "date", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date Added, New', by: [{ field: "_createdAt", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date Added, Old', by: [{ field: "_createdAt", direction: "asc" }]})
+                      ])
                     // Use a GROQ filter to get documents.
                     .filter('_type == "presse" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })
@@ -249,6 +258,13 @@ export default () =>
                   S.documentList()
                     .id('videos')
                     .title('Vidéos')
+                    .defaultOrdering([{field: '_createdAt', direction: 'desc'}])
+                    .menuItems([
+                      S.orderingMenuItem({title: 'Name A-Z', by: [{ field: "title", direction: "asc" }]}),
+                      S.orderingMenuItem({title: 'Name Z-A', by: [{ field: "title", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date Added, New', by: [{ field: "_createdAt", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date Added, Old', by: [{ field: "_createdAt", direction: "asc" }]})
+                      ])
                     // Use a GROQ filter to get documents.
                     .filter('_type == "video" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })
@@ -305,6 +321,13 @@ export default () =>
                   S.documentList()
                     .id('photos')
                     .title('Photos')
+                    .defaultOrdering([{field: '_createdAt', direction: 'desc'}])
+                    .menuItems([
+                      S.orderingMenuItem({title: 'Name A-Z', by: [{ field: "title", direction: "asc" }]}),
+                      S.orderingMenuItem({title: 'Name Z-A', by: [{ field: "title", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date Added, New', by: [{ field: "_createdAt", direction: "desc" }]}),
+                      S.orderingMenuItem({title: 'Date Added, Old', by: [{ field: "_createdAt", direction: "asc" }]})
+                      ])
                     // Use a GROQ filter to get documents.
                     .filter('_type == "photo" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })
@@ -312,7 +335,7 @@ export default () =>
                       // Assume we can handle all intents (actions) regarding post documents
                       return params.type === 'photo'
                     })
-                )                                                    
+                )
             ]
             )
         ),                         
