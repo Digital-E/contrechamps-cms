@@ -60,7 +60,13 @@ export default {
       name: 'video',
       type: 'string',
       description: "Vimeo Video ID: https://vimeo.com/[ID] or Youtube ID: https://youtu.be/[ID]"
-    },     
+    },
+    {
+      title: 'External Link',
+      name: 'externalLink',
+      type: 'url',
+      description: "Si renseigné, la vignette sur la page d'accueil pointe vers ce lien externe (nouvel onglet) au lieu de la page de l'actualité.",
+    },
     {
         title: 'Text Vignette',
         name: 'textVignette',

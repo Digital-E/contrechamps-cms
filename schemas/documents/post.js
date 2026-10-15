@@ -161,11 +161,13 @@ export default {
     },
     {
       name: 'videoMp4',
-      type: 'file' 
+      type: 'file',
+      hidden: true
     },
     {
     name: 'videoWebm',
-    type: 'file' 
+    type: 'file',
+    hidden: true
     },
     {
       name: 'label',
